@@ -4,6 +4,9 @@ class Rectangle(
 ) {
     init {
         println("Rectangle created with side $a and $b")
+        println("The area of rectangle is ${area()}")
+        println("The perimeter of rectangle is ${perimeter()} ")
+        println("Is the rectangle a square? ${isSquare()}")
     }
 
     fun area() = a*b

@@ -12,7 +12,7 @@ fun main() {
     println(a+b)
 
     val myRect = Rectangle(5.0, 10.0)
-    println("The area of rectangle is ${myRect.area()}")
-    println("The perimeter of rectangle is ${myRect.perimeter()} ")
-   println("Is the rectangle a square? ${ myRect.isSquare()}")
+
+
+    val myCircle = Circle(5.0)
 }

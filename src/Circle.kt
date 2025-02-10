@@ -1,7 +1,15 @@
+import kotlin.random.Random
+
 class Circle(
     val radius : Double
 ) : Shape("Circle") {
-    val pi : Double = 3.14
+
+    companion object {
+        fun randomCircle() : Circle{
+            val radius = Random.nextDouble(1.0, 10.0)
+            return Circle(radius)
+        }
+    }
 
     init{
         println("Circle created with radius: $radius")
@@ -9,7 +17,7 @@ class Circle(
         println("The perimeter of Circle is ${perimeter()}")
     }
 
-    fun area() = pi * radius * radius
+    override fun area() = ImportantValues.PI * radius * radius
 
-    fun perimeter() = 2 * pi * radius
+    override fun perimeter() = 2 * ImportantValues.PI * radius
 }

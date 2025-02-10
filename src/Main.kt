@@ -12,6 +12,8 @@ fun main() {
     println(a+b)
 
     val myRect = Rectangle(5.0, 10.0)
+    myRect.changeName("Dibba")
+    println("I changed the name of my rectangle to ${myRect.name}")
 
 
     val myCircle = Circle(5.0)

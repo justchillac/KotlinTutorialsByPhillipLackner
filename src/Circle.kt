@@ -1,6 +1,6 @@
 class Circle(
     val radius : Double
-) {
+) : Shape("Circle") {
     val pi : Double = 3.14
 
     init{

@@ -31,6 +31,35 @@ fun main() {
     //Similarly generating rectangle with random sides using companion object
     val rect1 = Rectangle.randomRect()
     println("Rectangle with length: ${rect1.a} & breadth: ${rect1.b} created")
+
+    //Anonymous class trapezium
+    val c = 6
+    val d = 7
+    val height = 5
+    val trapezium = object : Shape("trapezium", a, b, c, d, height){
+
+        override fun area(): Double {
+            return  (a+b)*height/2.0
+        }
+
+        override fun perimeter(): Double {
+            return  (a+b+c+d).toDouble()
+        }
+    }
+
+    println("The area of trapezium is ${trapezium.area()} and its perimeter is ${trapezium.perimeter()}")
+
+//    val x = readLine()?.toInt()
+    //Exception Handling
+    val x = try {
+        readLine()?.toInt()
+    } catch (
+        e: NumberFormatException
+    ){
+        //That is if you have entered a string
+        0
+    }
+    println("As we have handled the exception the value of x will be $x")
 }
 
 fun maxArea(shape1: Shape, shape2 : Shape) : Double{

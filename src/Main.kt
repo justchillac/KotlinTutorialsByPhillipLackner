@@ -60,6 +60,30 @@ fun main() {
         0
     }
     println("As we have handled the exception the value of x will be $x")
+
+    //Creating a custom Lambda filter
+    fun List<Shape>.customFilter(filterFunction: (Shape) -> (Boolean)): List<Shape>{   //Here filterFunction is
+        // the lambda function and customFilter is the extension function
+        val resultList = mutableListOf<Shape>()  //Creating Empty list to store filtered items
+        for(shape in this){  //Iterating the list of shapes
+            if(filterFunction(shape)){ //Here we have applied the filter function
+                resultList.add(shape)  //Based on the Boolean value returned shapes will get added in the resultList
+            }
+        }
+        return resultList  //Return the filtered list
+    }
+
+    //Printing the shapes list
+    val circle = Circle(5.0)
+    val circle2 = Circle(10.0)
+    val rect2 = Rectangle(5.0)
+    val rect3 = Rectangle(5.0)
+    var shapes = listOf(circle, circle2, rect2, rect3)
+    //This customFilter works exactly same as the .filter function
+    shapes = shapes.customFilter { it.area()>=50.0 }
+    for(shape in shapes){
+        println("${shape.name} is a shape with area ${shape.area()} that is greater than 5.0")
+    }
 }
 
 fun maxArea(shape1: Shape, shape2 : Shape) : Double{

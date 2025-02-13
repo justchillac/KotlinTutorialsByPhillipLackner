@@ -1,10 +1,9 @@
 import kotlin.random.Random
-import kotlin.time.Duration
 
 class Rectangle(
     val a : Double,
     val b : Double
-) : Shape("Rectangle"){
+) : T("Rectangle"){
 
     companion object {
         fun randomRect(): Rectangle{

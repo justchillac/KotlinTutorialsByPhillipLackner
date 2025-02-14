@@ -9,6 +9,14 @@ fun main(){
     val rect2 = Rectangle(5.0)
     val rect3 = Rectangle(5.0)
     var shapes = listOf(circle, circle2, rect2, rect3)
+
+    //The Triple does nothing more than saving three values of any type
+    val triple = Triple<Int, String, Boolean>(3, "Hello", true)
+    //Passing Several Type Parameters
+    //The implementation for the CustomTriple is done in a seperate kotlin class, check it out to understand how it works
+    var customTriple = CustomTriple<Int, String, Boolean>(42, "Hello", true)
+    customTriple.printTypes()
+
     //This customFilter works exactly same as the .filter function
     shapes = shapes.customFilter { it.area()>=50.0 }
     for(shape in shapes){

@@ -15,7 +15,8 @@ fun main(){
 
     //Implementation of Custom Lambda Function is done in main class for some reason
 
-    //Challenge: Implement a custom lambda function such that it takes a list of integers and only sums up odd numbers
+    //Challenge: Implement a custom lambda function such that it takes a list of integers
+    // and only sums up odd numbers
     var list1 = (1..10).toList()
     println(list1)
 

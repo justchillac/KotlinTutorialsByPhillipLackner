@@ -9,6 +9,14 @@ fun main(){
     val rect2 = Rectangle(5.0)
     val rect3 = Rectangle(5.0)
     var shapes = listOf(circle, circle2, rect2, rect3)
+
+    //The Triple does nothing more than saving three values of any type
+    val triple = Triple<Int, String, Boolean>(3, "Hello", true)
+    //Passing Several Type Parameters
+    //The implementation for the CustomTriple is done in a seperate kotlin class, check it out to understand how it works
+    var customTriple = CustomTriple<Int, String, Boolean>(42, "Hello", true)
+    customTriple.printTypes()
+
     //This customFilter works exactly same as the .filter function
     shapes = shapes.customFilter { it.area()>=50.0 }
     for(shape in shapes){
@@ -34,4 +42,20 @@ fun <T> List<T>.customFilter(filterFunction: (T) -> (Boolean)): List<T>{
         }
     }
     return resultList
+}
+
+//In Phillip Lackner's Generics video he has explained how using generic types(e.g <T>) instead of <Int>
+//can cause some problem which can be solved of course but has to be solved manually
+//The problem he mentioned was when we replace <Int> with <T : Number> we don't know what we should intialize
+//sum with,e.g. whether it should be 0 or 0.0 cause <T: Number> can mean anything(e.g. integer, double, float)
+//Finally always remember generics is a vast topic, so only knowing what is required for us and understanding the
+//core concept should be enough
+fun List<Int>.customSum(sumFunction: (Int) -> (Boolean)): Int{
+    var sum = 0
+    for(item in this){
+        if(sumFunction(item)){
+            sum+=item
+        }
+    }
+    return sum
 }

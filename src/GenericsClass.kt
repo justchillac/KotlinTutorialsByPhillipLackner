@@ -43,3 +43,19 @@ fun <T> List<T>.customFilter(filterFunction: (T) -> (Boolean)): List<T>{
     }
     return resultList
 }
+
+//In Phillip Lackner's Generics video he has explained how using generic types(e.g <T>) instead of <Int>
+//can cause some problem which can be solved of course but has to be solved manually
+//The problem he mentioned was when we replace <Int> with <T : Number> we don't know what we should intialize
+//sum with,e.g. whether it should be 0 or 0.0 cause <T: Number> can mean anything(e.g. integer, double, float)
+//Finally always remember generics is a vast topic, so only knowing what is required for us and understanding the
+//core concept should be enough
+fun List<Int>.customSum(sumFunction: (Int) -> (Boolean)): Int{
+    var sum = 0
+    for(item in this){
+        if(sumFunction(item)){
+            sum+=item
+        }
+    }
+    return sum
+}

@@ -2,7 +2,7 @@ import kotlin.random.Random
 
 class Circle(
     val radius : Double
-) : T("Circle") {
+) : Shape("Circle") {
 
     companion object {
         fun randomCircle() : Circle{

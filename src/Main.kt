@@ -36,7 +36,7 @@ fun main() {
     val c = 6
     val d = 7
     val height = 5
-    val trapezium = object : T("trapezium", a, b, c, d, height){
+    val trapezium = object : Shape("trapezium", a, b, c, d, height){
 
         override fun area(): Double {
             return  (a+b)*height/2.0
@@ -62,9 +62,9 @@ fun main() {
     println("As we have handled the exception the value of x will be $x")
 
     //Creating a custom Lambda filter
-    fun List<T>.customFilter(filterFunction: (T) -> (Boolean)): List<T>{   //Here filterFunction is
+    fun List<Shape>.customFilter(filterFunction: (Shape) -> (Boolean)): List<Shape>{   //Here filterFunction is
         // the lambda function and customFilter is the extension function
-        val resultList = mutableListOf<T>()  //Creating Empty list to store filtered items
+        val resultList = mutableListOf<Shape>()  //Creating Empty list to store filtered items
         for(shape in this){  //Iterating the list of shapes
             if(filterFunction(shape)){ //Here we have applied the filter function
                 resultList.add(shape)  //Based on the Boolean value returned shapes will get added in the resultList
@@ -86,7 +86,7 @@ fun main() {
     }
 }
 
-fun maxArea(shape1: T, shape2 : T) : Double{
+fun maxArea(shape1: Shape, shape2 : Shape) : Double{
     val areaShape1 = shape1.area()
     val areaShape2 = shape2.area()
     return if(areaShape1>areaShape2) areaShape1 else areaShape2

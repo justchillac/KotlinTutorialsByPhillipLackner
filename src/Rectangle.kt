@@ -3,7 +3,7 @@ import kotlin.random.Random
 class Rectangle(
     val a : Double,
     val b : Double
-) : T("Rectangle"){
+) : Shape("Rectangle"){
 
     companion object {
         fun randomRect(): Rectangle{

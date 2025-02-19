@@ -1,4 +1,4 @@
-abstract class T(
+abstract class Shape(
     var name: String
 ) {
     constructor(name: String, vararg dimensions: Int) : this(name)
